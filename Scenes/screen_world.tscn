@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://84arskxovg4c"]
+
+[ext_resource type="PackedScene" uid="uid://c14nkxx5jk8qu" path="res://Scenes/Objects/Pong/Players/player_2d.tscn" id="1_0g5y6"]
+[ext_resource type="PackedScene" uid="uid://c0usk21dd2eov" path="res://Scenes/Objects/Pong/Players/paddle_ai_2d.tscn" id="2_7ac2e"]
+[ext_resource type="PackedScene" uid="uid://bjogyvt58aptx" path="res://Scenes/Objects/Pong/Players/pong_ball_2d.tscn" id="3_ejro0"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jbbjp"]
+
+[node name="Main2D" type="Node2D"]
+
+[node name="ScreenBG" type="MeshInstance2D" parent="."]
+modulate = Color(0.0313726, 0.0313726, 0.0313726, 1)
+position = Vector2(240, 136)
+scale = Vector2(480, 272)
+mesh = SubResource("QuadMesh_jbbjp")
+
+[node name="Paddle2D" parent="." instance=ExtResource("1_0g5y6")]
+position = Vector2(80, 136)
+
+[node name="PaddleAI2D" parent="." instance=ExtResource("2_7ac2e")]
+position = Vector2(400, 136)
+
+[node name="PongBall2D" parent="." instance=ExtResource("3_ejro0")]
+position = Vector2(240, 136)

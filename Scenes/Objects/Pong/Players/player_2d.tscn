@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c14nkxx5jk8qu"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/Pong/Players/player_2d.gd" id="1_3dht2"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_50trl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i55uk"]
+size = Vector2(8, 8)
+
+[node name="Paddle2D" type="CharacterBody2D"]
+script = ExtResource("1_3dht2")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(8, 8)
+mesh = SubResource("QuadMesh_50trl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i55uk")

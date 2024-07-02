@@ -1,0 +1,14 @@
+Brownie ADV
+
+0.01
+
+Faltante:
+	Completado
+
+Completado:
+	# Mejorar el movimiento de la "Bola"
+	# Implementacion de los "Paddles"
+	# Implementacion de la "Bola"
+	# Pantalla
+
+0.02

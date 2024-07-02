@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnwyd6m3vbfaw"]
+
+[ext_resource type="PackedScene" uid="uid://84arskxovg4c" path="res://Scenes/screen_world.tscn" id="1_hj54j"]
+[ext_resource type="Script" path="res://Scenes/screen_node.gd" id="1_r8kxn"]
+[ext_resource type="Texture2D" uid="uid://bs8slyy0ug83k" path="res://Assets/Tennis.png" id="2_55qk0"]
+
+[node name="MainNode" type="Node"]
+script = ExtResource("1_r8kxn")
+
+[node name="ScreenControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScreenPanel" type="SubViewportContainer" parent="ScreenControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="ScreenControl/ScreenPanel"]
+handle_input_locally = false
+size = Vector2i(480, 272)
+render_target_update_mode = 4
+
+[node name="Main2D" parent="ScreenControl/ScreenPanel/SubViewport" instance=ExtResource("1_hj54j")]
+
+[node name="Sprite2D" type="Sprite2D" parent="ScreenControl/ScreenPanel/SubViewport"]
+modulate = Color(1, 1, 1, 0.337255)
+position = Vector2(240, 136)
+scale = Vector2(2, 2)
+texture = ExtResource("2_55qk0")
