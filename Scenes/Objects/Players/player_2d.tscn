@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c14nkxx5jk8qu"]
+[gd_scene load_steps=4 format=3 uid="uid://drbhoyom074hl"]
 
-[ext_resource type="Script" path="res://Scripts/Objects/Pong/Players/player_2d.gd" id="1_3dht2"]
+[ext_resource type="Script" path="res://Scripts/Objects/Players/player_2d.gd" id="1_ad57u"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_50trl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i55uk"]
 size = Vector2(8, 8)
 
-[node name="Paddle2D" type="CharacterBody2D"]
-script = ExtResource("1_3dht2")
+[node name="Player2D" type="CharacterBody2D"]
+script = ExtResource("1_ad57u")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 scale = Vector2(8, 8)

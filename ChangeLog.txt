@@ -12,3 +12,12 @@ Completado:
 	# Pantalla
 
 0.02
+
+
+Faltante:
+	# Capacidad de leer archivos ZIP y JSON para los "Juegos"
+	# Crear un Pong para cada vez que inicies la Consola
+	# Mas Objetos como el "Bloque" o "Bola Movible"
+
+Completado:
+	# Agregar en el movimiento la variable "delta"
