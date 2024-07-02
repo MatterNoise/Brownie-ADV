@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var BallSpeed = 4
+@export var BallSpeed = 300
 @export var BallSize = 16
 
 var BallStarted = false
@@ -40,7 +40,7 @@ func _process(delta):
 				FirstCollision = false
 			else:
 				BallVelocity.x = -BallVelocity.x
-		position += BallVelocity
+		position += delta * BallVelocity
 		
 		BallCollided = false
 

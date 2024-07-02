@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var PaddleSize = Vector2(16, 48)
 
 var PaddleType = "Right"
-var PaddleSpeed = 3.25
+var PaddleSpeed = 200
 
 var LockOffScreenMove = true
 
@@ -19,15 +19,15 @@ func _process(delta):
 		if PaddleType == "Left":
 			if PongBall.position.x < 240:
 				if position.y > PongBall.position.y:
-					position.y -= PaddleSpeed
+					position.y -= delta * PaddleSpeed
 				if position.y < PongBall.position.y:
-					position.y += PaddleSpeed
+					position.y += delta * PaddleSpeed
 		elif PaddleType == "Right":
 			if PongBall.position.x > 240:
 				if position.y > PongBall.position.y:
-					position.y -= PaddleSpeed
+					position.y -= delta * PaddleSpeed
 				if position.y < PongBall.position.y:
-					position.y += PaddleSpeed
+					position.y += delta * PaddleSpeed
 	
 	position = position.clamp(Vector2(0, 0), Vector2(480, 272))
 
