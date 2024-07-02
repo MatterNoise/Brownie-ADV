@@ -1,0 +1,18 @@
+{
+	"GameTitle" : "Pong",
+	"ScreenImage" : "Pong",
+	
+	"PlayerOne" : {
+		"Type" : "Default",
+		"PositionX" : 80,
+		"PositionY" : 136
+	},
+	"PlayerTwo" : {
+		"Type" : "PongAI",
+		"PositionX" : 80,
+		"PositionY" : 136
+	}
+	"OtherObjects" : {
+		
+	}
+}

@@ -13,7 +13,7 @@ var BallVelocity : Vector2
 func _ready():
 	UpdateSettings()
 
-func _process(delta):
+func _physics_process(delta):
 	if Input.is_action_just_pressed("BallStart") and BallStarted == false:
 		BallStarted = true
 		FirstCollision = true

@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 @export var PaddleSize = Vector2(16, 48)
 
-var PaddleType = "Right"
 var PaddleSpeed = 200
 
 var LockOffScreenMove = true
 
+var PaddleType
 var PongBall
 
 func _ready():
@@ -34,3 +34,8 @@ func _process(delta):
 func UpdateSettings():
 	$MeshInstance2D.scale = PaddleSize
 	$CollisionShape2D.shape.size = PaddleSize
+	
+	if position.x < 240:
+		PaddleType = "Left"
+	else:
+		PaddleType = "Right"
