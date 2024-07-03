@@ -15,7 +15,7 @@ Completado:
 
 
 Faltante:
-	# Capacidad de leer archivos ZIP y JSON para los "Juegos"
+	# Capacidad basica de leer archivos ZIP y JSON para los "Juegos"
 	# Crear un Pong para cada vez que inicies la Consola
 	# Mas Objetos como el "Bloque" o "Bola Movible"
 

@@ -9,10 +9,13 @@
 	},
 	"PlayerTwo" : {
 		"Type" : "PongAI",
-		"PositionX" : 80,
+		"PositionX" : 400,
 		"PositionY" : 136
 	},
 	"OtherObjects" : {
-		"UwU" : 0
+		"Ball" : {
+			"PositionX" : 240,
+			"PositionY" : 136
+		}
 	}
 }

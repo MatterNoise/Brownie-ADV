@@ -15,15 +15,15 @@ func _ready():
 func _process(delta):
 	PongBall = get_parent().get_node("PongBall2D")
 	
-	if not PongBall == null:
+	if not (PongBall == null):
 		if PaddleType == "Left":
-			if PongBall.position.x < 240:
+			if PongBall.position.x > 240:
 				if position.y > PongBall.position.y:
 					position.y -= delta * PaddleSpeed
 				if position.y < PongBall.position.y:
 					position.y += delta * PaddleSpeed
 		elif PaddleType == "Right":
-			if PongBall.position.x > 240:
+			if PongBall.position.x < 240:
 				if position.y > PongBall.position.y:
 					position.y -= delta * PaddleSpeed
 				if position.y < PongBall.position.y:

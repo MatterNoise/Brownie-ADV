@@ -9,7 +9,7 @@
 [node name="Main2D" type="Node2D"]
 
 [node name="ScreenBG" type="MeshInstance2D" parent="."]
-modulate = Color(0.0313726, 0.0313726, 0.0313726, 1)
+modulate = Color(0.0941176, 0.0941176, 0.0941176, 1)
 position = Vector2(240, 136)
 scale = Vector2(480, 272)
 mesh = SubResource("QuadMesh_jbbjp")
