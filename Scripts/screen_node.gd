@@ -19,6 +19,7 @@ func _process(delta):
 	pass
 
 func ReadGame(File : String):
+	#Delete the last session
 	if ScreenWorld.get_children():
 		print("'ScreenWorld' Has Childens!, Deleting Childs...")
 		
@@ -26,6 +27,7 @@ func ReadGame(File : String):
 			if (not WorldChild.name == "ScreenBG"):
 				WorldChild.queue_free()
 	
+	#Init Default Game
 	var ZIPManager = ZIPReader.new()
 	var JSONManager = JSON.new()
 	
@@ -49,10 +51,14 @@ func ReadGame(File : String):
 			
 			return
 		
-		get_window().title = ProgramName + " (Now Playing: " + JSONManager.data.GameTitle + ")"
+		var JSONData = JSONManager.data
 		
+		get_window().title = ProgramName + " (Now Playing: " + JSONData.GameTitle + ")"
 		
+		#Init Player One
+		JSONData.PlayerOne.Type
 		
+		JSONData.PlayerOne.PositionX
 	else:
 		printerr("ZIP Game Reader Error!, 'GameData.json' not found!")
 		

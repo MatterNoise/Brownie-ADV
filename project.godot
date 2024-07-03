@@ -13,7 +13,7 @@ config_version=5
 config/name="Brownie ADV"
 run/main_scene="res://Scenes/main_node.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Logo.png"
 
 [display]
 
