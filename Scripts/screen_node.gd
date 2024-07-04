@@ -22,20 +22,27 @@ func CreateItem(NewItem : String):
 	var ItemLoaded
 	
 	match NewItem:
-		"Player":
+		"PlayerOne":
+			ItemLoaded = load("res://Scenes/Objects/Players/player_2d.tscn")
+		"PlayerTwo":
 			ItemLoaded = load("res://Scenes/Objects/Players/player_2d.tscn")
 		"PongAI":
 			ItemLoaded = load("res://Scenes/Objects/Pong/paddle_ai_2d.tscn")
 		"Ball":
 			ItemLoaded = load("res://Scenes/Objects/Pong/pong_ball_2d.tscn")
 		_:
-			printerr("'CreateItem' Error!, NewItem no match with 'Assets' objects")
+			printerr("'CreateItem' Error!," + NewItem + " no match with 'Assets' objects")
 			
 			return null
 	
 	var ItemInstanced = ItemLoaded.instantiate()
 	
 	add_child(ItemInstanced)
+	
+	if NewItem == "PlayerOne":
+		ItemInstanced.PlayerType = "PlayerOne"
+	elif NewItem == "PlayerTwo":
+		ItemInstanced.PlayerType = "PlayerTwo"
 	
 	return ItemInstanced
 
@@ -76,31 +83,31 @@ func ReadGame(File : String):
 		
 		get_window().title = ProgramName + " (Now Playing: " + JSONData.GameTitle + ")"
 		
-		#Init Player One
-		var PlayerOne = CreateItem(JSONData.PlayerOne.Type)
+		#Init  Objects
+		var ObjectsList = JSONData.Objects.keys()
 		
-		if not (PlayerOne == null):
-			PlayerOne.position.x = JSONData.PlayerOne.PositionX
-			PlayerOne.position.y = JSONData.PlayerOne.PositionY
-		
-		#Init Player Two
-		var PlayerTwo = CreateItem(JSONData.PlayerTwo.Type)
-		
-		if not (PlayerTwo == null):
-			PlayerTwo.position.x = JSONData.PlayerTwo.PositionX
-			PlayerTwo.position.y = JSONData.PlayerTwo.PositionY
-		
-		#Init Other objects
-		var ObjectsList = JSONData.OtherObjects.keys()
-		
-		for OtherObjectNumber in ObjectsList.size():
-			var NewObjectData = JSONData.OtherObjects[ObjectsList[OtherObjectNumber]]
+		for ObjectNumber in ObjectsList.size():
+			var NewObjectData = JSONData.Objects[ObjectsList[ObjectNumber]]
 			
-			var NewObject = CreateItem(ObjectsList[OtherObjectNumber])
+			var NewObject = CreateItem(ObjectsList[ObjectNumber])
 			
-			if not (NewObject == null):
-				NewObject.position.x = NewObjectData.PositionX
-				NewObject.position.y = NewObjectData.PositionY
+			match ObjectsList[ObjectNumber]:
+				"PlayerOne":
+					NewObject.position.x = NewObjectData.PositionX
+					NewObject.position.y = NewObjectData.PositionY
+					NewObject.LockMoveX = NewObjectData.LockMovementX
+					NewObject.LockMoveY = NewObjectData.LockMovementY
+				"PlayerTwo":
+					NewObject.position.x = NewObjectData.PositionX
+					NewObject.position.y = NewObjectData.PositionY
+					NewObject.LockMoveX = NewObjectData.LockMovementX
+					NewObject.LockMoveY = NewObjectData.LockMovementY
+				"PongAI":
+					NewObject.position.x = NewObjectData.PositionX
+					NewObject.position.y = NewObjectData.PositionY
+				"Ball":
+					NewObject.position.x = NewObjectData.PositionX
+					NewObject.position.y = NewObjectData.PositionY
 	else:
 		printerr("ZIP Game Reader Error!, 'GameData.json' not found!")
 		

@@ -2,20 +2,20 @@
 	"GameTitle" : "Pong",
 	"ScreenImage" : "Pong.png",
 	
-	"PlayerOne" : {
-		"Type" : "Player",
-		"PositionX" : 80,
-		"PositionY" : 136
-	},
-	"PlayerTwo" : {
-		"Type" : "PongAI",
-		"PositionX" : 400,
-		"PositionY" : 136
-	},
-	"OtherObjects" : {
+	"Objects" : {
+		"PlayerOne" : {
+			"PositionX" : 80,
+			"PositionY" : 136,
+			"LockMovementX" : true,
+			"LockMovementY" : false
+		},
+		"PongAI" : {
+			"PositionX" : 400,
+			"PositionY" : 136
+		},
 		"Ball" : {
 			"PositionX" : 240,
 			"PositionY" : 136
-		}
+		},
 	}
 }

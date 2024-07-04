@@ -22,8 +22,6 @@ func _physics_process(delta):
 	
 	if BallStarted == true:
 		if (position.x < 1) or (position.x > 479):
-			position = Vector2(240, 136)
-			
 			BallStarted = false
 			
 			return
